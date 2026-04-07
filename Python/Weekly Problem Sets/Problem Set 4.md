@@ -1,4 +1,4 @@
-# Problem Set 3 — Data Structures, String Methods & List Methods
+# Problem Set 4 — Data Structures, String Methods & List Methods
 
 **Topics covered:** dictionaries, sets, string methods (`.lower()`, `.split()`, `.strip()`, `.replace()`, `.join()`, etc.), list methods (`.append()`, `.sort()`, `.count()`, `.remove()`, etc.)
 
