@@ -19,10 +19,9 @@ jobs:
     grade:
         name: Autograding
         runs-on: ubuntu-latest
-        # Skip this job on the instructor template repo so pushes here don't
-        # trigger grading. Remove this condition (or change the repo name) if
-        # you want grading to run on the template too.
-        if: github.repository != 'AFC-AI2C/summer-course'
+        # Skip automatic grading on the instructor template repo, but always
+        # allow manual runs (workflow_dispatch) from any repo.
+        if: github.repository != 'AFC-AI2C/summer-course' || github.event_name == 'workflow_dispatch'
 
         steps:
             - name: Checkout student code
