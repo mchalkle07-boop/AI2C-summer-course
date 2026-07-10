@@ -1,0 +1,36 @@
+#Integer/floor division
+x//y
+
+#Modulo (remainder)
+x%y
+
+#Amend variable value by + 1 (add and assign)
+x += 1
+
+#Amdend variable value by - 1 (subtract and assign)
+x -= 1
+
+#Comparison operators
+x == y  # Equal to
+x != y  # Not equal to
+x < y   # Less than
+x > y   # Greater than
+x <= y  # Less than or equal to
+x >= y  # Greater than or equal to
+
+#logical operators
+x and y  # true if both are true
+x or y   # true if either is true
+not x    # true if x is false, false if x is true
+
+#order of operations
+PEMDAS
+
+#variable naming rules
+1. Variable names can only contain letters, numbers, and underscores. (no special characters or spaces)
+2. Variable names cannot start with a number.
+3. Variable names are case-sensitive.
+
+#variable naming conventions
+1. Use descriptive names that indicate the purpose of the variable.
+2. Use lowercase letters and separate words with underscores (snake_case).
