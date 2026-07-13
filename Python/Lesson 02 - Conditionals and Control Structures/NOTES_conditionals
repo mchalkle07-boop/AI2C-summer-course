@@ -1,0 +1,91 @@
+Python is used for:
+Data E.T.L.
+Extraction getting data from sqlite3 import Binary
+
+from databases, APIs, unformatted websites
+Transformation manipulate data and reformat
+Loading put data into databases
+
+Exploration Pandas
+Moeling/AI Modeling SciKitLearn/Pytorch
+Backend Dev Flask and FastAPI
+
+CTRL + ? will mass comment out the highlited section
+
+
+print(sep='x')
+print(end='\n\n\n')
+
+Will be executed in this order
+if              #If this is true the rest of the block will be skipped, if false it will execute elif
+elif            #If this is true the rest of the block will be skipped, if false it will execure else
+else            #If this is true full block will have been executed, then execute print statement
+
+Example:
+score = 89
+if score >= 90:
+    print("Grade: A")
+elif score >= 80:
+    print("Grade: B")
+elif score >= 70:
+    print("Grade: C")
+elif score >= 60:
+    print("Grade: D")
+else:
+    print("Grade: F")
+
+
+List []
+my_list = ['hello']         #one word list
+my_list.append('goodbye')   #adds word to the end of list 
+my_list.append(5)
+my_list.append(True)
+
+my_list = ['Python', 'is', 'oh', 'so', 'fun']
+my_list[0] = Python 
+my_list[4] = fun 
+my_list[-1] = fun           #the first position in the list from the end
+my_list[5] = IndexError
+
+Slicing:
+my_list[0:3] = ['Python', 'is', 'oh']  #replaces the first three words in the list with the new words   
+                                       #second number is skipped, the first 0 position through 2 is pulled
+my_list[1:]                            #everything from 1 to the end
+my_list[:5]                            #everything from the 4th position back to the first
+
+.append adds 1 item to end of list
+.extend adds multiple items to the end of list
+
+range(stop)         #the stopping position
+range(5) #prints 0, 1, 2, 3, 4
+range(10-20)
+range(Start, stop, step)    #what position to start at, what position to stop at, what increments to do
+
+Definitive Loop FOR
+Indefinit Loop WHILE 
+
+# For loop Syntax:
+# finite / definitive loop
+for variable in [list]:
+    # code
+# Example:
+fruits = ["apple", "banana", "cherry"]
+for fruit in fruits:            #fruit is a loop variable  created in the for loop, 
+                                #it is not a variable that exists outside of the loop
+    print(fruit)
+
+to find the index of a value in a list:
+fruits = ["apple", "banana", "cherry"] 
+fruits.index("banana")  #returns 1, the index of banana in the list because it is the second item
+fruits[0] = kiwi  #replaces the first item in the list with kiwi
+To alpabetize a list use the sort() method:
+fruits.sort()  #sorts the list in alphabetical order
+
+# While loop Syntax:
+# Indefinite loop
+
+
+
+# Binary
+
+128, 64, 32, 16, 8, 4, 2, 1
