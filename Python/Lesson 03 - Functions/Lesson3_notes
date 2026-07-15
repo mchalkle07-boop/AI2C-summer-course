@@ -1,0 +1,144 @@
+# print the numbers 1 - 100
+# if divisible by 3, print "Fizz"
+# if divisible by 5, print "Buzz"
+# if divisible by both 3 and 5, print "FizzBuzz"  
+
+# for num in range(1, 101):
+#     if num % 3 == 0 and num % 5 == 0:
+#         print("FizzBuzz")
+#     elif num % 3 == 0:
+#         print("Fizz")
+#     elif num % 5 == 0:
+#         print("Buzz")
+# else:
+#     print(num)
+# import random
+
+# user_choice = input("Pick rock, paper, or scissors: ")  # user picks choice
+# my_choice = random.choice(["rock", "paper", "scissors"])  # my randomly assigned choice
+
+# if user_choice == my_choice:  # if user choice is equal to my choice
+#     print("It's a tie!")
+# elif user_choice == "rock" and my_choice == "scissors":  # if user picks rock and I pick scissors
+#     print("You win! Rock beats scissors.")
+# elif user_choice == "paper" and my_choice == "rock":  # if user picks paper and I pick rock
+#     print("You win! Paper beats rock.")
+# elif user_choice == "scissors" and my_choice == "paper":  # if user picks scissors and I pick paper
+#     print("You win! Scissors beats paper.")
+# else:
+#     print("You lose!")
+
+# import random
+
+# user_choice = int(input("Pick a number between 1 and 100: "))  # user picks a number
+# my_choice = random.randint(1, 100)                      # random assigned number
+# tries = 1
+# while user_choice != my_choice:
+#     if user_choice > my_choice:
+#         print("Too high")
+#     elif user_choice < my_choice:
+#         print("Too low")
+#     user_choice = int(input("Pick a number between 1 and 100: "))
+#     tries += 1  
+# print("You guessed it! The number was", my_choice, "and it took you", tries, "tries.") 
+
+
+
+# Functions:
+
+
+
+# Import modules:
+# 3 types of modules:
+# 1. Built-in modules: These are modules that come pre-installed with Python. Examples include `math`, `random`, `os`, and `sys`. 
+# You can use these modules without any additional installation.
+# 2. Your own modules: You can create your own Python files (modules) and import them into other Python scripts. This allows you to organize your code into reusable components.
+# 3. Third-party modules: These are modules created by the Python community and are not included with Python by default. 
+# You can install third-party modules using package managers like `pip`. Examples include `requests`, `numpy`, and `pandas`.
+
+
+# RANDOM MODULE:
+# The `random` module in Python provides functions for generating random numbers and making random selections.
+#     https://docs.python.org/3/library/random.html
+# random.randint(a, b): Returns a random integer N such that a <= N <= b.
+# random.choice(sequence): Returns a randomly selected element from a non-empty sequence (like a list or a string).
+# random.random(): Returns a random float number between 0.0 and 1.0.
+
+# gen number from 0-100
+# less than 50 tell user too low
+# if greater than 50 tell user too high
+# display number to check code
+
+# import random
+# user_choice = int(input("Pick a number between 0 and 100: "))  # user picks a number
+# rand = random.randint(1,100)
+
+# if user_choice > 50:
+#     print("Too low")
+# elif user_choice < 50:
+#     print("Too high")
+# else:
+#     print("the number is 50")
+# print ("The number is:", rand)
+
+# def function_name(parameter1, parameter2):
+#     # code block, function body
+#     return value
+# #example:
+# def add_together(num1, num2):       # creates a function called add_together that takes two parameters, num1 and num2
+#     sum = num1 + num2               # function to add 2 numbers together and store the result in a variable called sum
+#     return sum
+
+
+# call the function_name(argument1, argument2)
+# result = add_together(5, 10)            # variable called to use the function add_together with the arguments 5 and 10, and store the result in a variable called result
+# print(result)                           # Output: 15
+
+# length = int(input("What is the length: "))
+# Width = int(input("What is the width: "))
+
+# def area_of_rectangle(L: int, W: int): -> int
+#     return L * W
+
+# Area = area_of_rectangle(length, Width)
+
+# print(Area)
+
+# check = float(input("What is the amount of your check? "))
+# tip_perc = float(input("What percent do you want to tip? "))
+
+# def tip(total: float, percent: float) -> float:
+#     return total * (percent / 100)
+
+# total_tip = tip(check, tip_perc)
+# total_tip2 = tip(100, 20)
+
+# print(f"{total_tip:.2f}")
+# print(f"{total_tip2:.2f}")
+
+# first_word = input("What is your first word?")
+# sec_word = input("What is your second word? ")
+
+# def has_more_letters(let1: str, let2: str) -> str:
+#     return max(let1, let2, key=len)                     #using len() on both arguments will return the number of characters not the word
+# longer = has_more_letters(first_word, sec_word)
+
+# print(f"{longer} is the longest word.")
+
+# OR
+
+first_word = input("What is your first word? ")
+sec_word = input("What is your second word? ")
+
+def has_more_letters(let1: str, let2: str) -> str:
+    length1 = len(let1)  # get the length of the first word
+    length2 = len(let2)  # get the length of the second word
+
+    if length1 > length2:
+        return let1
+    elif length1 < length2:
+        return let2
+    
+longest_word = has_more_letters(first_word, sec_word)
+
+print(f"{longest_word} is the longest word.")
