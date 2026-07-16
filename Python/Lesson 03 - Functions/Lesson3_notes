@@ -127,18 +127,120 @@
 
 # OR
 
-first_word = input("What is your first word? ")
-sec_word = input("What is your second word? ")
+# first_word = input("What is your first word? ") # ask the user for the first word
+# sec_word = input("What is your second word? ")  # ask the user for the second word
 
-def has_more_letters(let1: str, let2: str) -> str:
-    length1 = len(let1)  # get the length of the first word
-    length2 = len(let2)  # get the length of the second word
+# def has_more_letters(let1: str, let2: str) -> str:
+#     length1 = len(let1)  # get the length of the first word
+#     length2 = len(let2)  # get the length of the second word
 
-    if length1 > length2:
-        return let1
-    elif length1 < length2:
-        return let2
+#     if length1 > length2:
+#         return let1
+#     elif length1 < length2:
+#         return let2
     
-longest_word = has_more_letters(first_word, sec_word)
+# longest_word = has_more_letters(first_word, sec_word)
 
-print(f"{longest_word} is the longest word.")
+# print(f"{longest_word} is the longest word.")
+
+# temp = float(input("What is the current temperature? "))
+# rain = input("Is it raining today (yes or no)? ")
+
+# if temp < 40:
+#     output = "Wear a coat."
+# elif 40 <= temp <= 65:
+#     output = "Bring a jacket."
+# else:
+#     output = "Enjoy the weather."
+
+# if rain == "yes":
+#     output += " \nBring an umbrealla just in case."
+
+# print(output)
+
+# def run_fizzbuzz():
+#     # Ask the user for inputs and convert to integers
+#     start = int(input("Enter starting number: "))
+#     stop = int(input("Enter ending number: "))
+    
+#     fizzbuzz_count = 0
+    
+#     # Loop through the user's defined range (inclusive)
+#     for i in range(start, stop + 1):
+#         if i % 3 == 0 and i % 5 == 0:
+#             print("FizzBuzz")
+#             fizzbuzz_count += 1
+#         elif i % 3 == 0:
+#             print("Fizz")
+#         elif i % 5 == 0:
+#             print("Buzz")
+#         else:
+#             print(i)
+            
+#     # Print the final count summary
+#     print(f"\nTotal 'FizzBuzz' occurrences: {fizzbuzz_count}")
+
+# # Call the function to run it
+# run_fizzbuzz()
+
+# password = input("Please enter a password: ")
+
+# digits = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+
+# def check_password(password):
+#     if len(password) < 8:
+#         return "Weak"
+#     else:
+#         # if password is greater than or equal to 8 characters...
+#         for letter in password:
+#             for digit in digits:
+
+#                 if letter == digit:
+#                     # if a character is a digit
+#                     return "Strong"
+
+#         return "Medium"
+
+# password_strength = check_password(password)
+# print(check_password(password))
+
+# # Loop to continue asking the user for a password until it reaches Strong
+# while password_strength != "Strong":
+#     print("Your password is not strong enough. Please try again.")
+#     password = input("Please enter a password: ")
+#     #this is required to check the password again through the function above
+#     password_strength = check_password(password)
+# # this is needed outside of the while loop to print the final message    
+# print("Your password is finally strong enough.")
+
+
+# function convert numeric to letter ABCD 
+# ask user how many test scores they want to enter 
+# loop that many times and print each score with its letter grade
+
+# Scores = input("What are you test scores as numerical values? ")
+# test_count = input("How many test scores do you want to convert? ")
+
+# score_list = []
+
+# def letter_grade(score):
+
+#     if score < 60:
+#         return "F"
+#     elif score <= 69:
+#         return "D"
+#     elif score <=79:
+#         return "C"
+#     elif score <=89:
+#         return "B"
+#     elif score <= 100:
+#         return "A"
+
+# students = int(input("How many grades are there to enter? "))
+# total_scores = 0
+# for student in range(1, students+1):
+#     score = float(input(f"Enter student #{student}'s score: "))
+#     total_scores += score
+#     print(f"Student #{student} got a letter grade {letter_grade(score)}")
+
+# print(f"The class average was {total_scores/students}, this is an overall {letter_grade(total_scores/students)} average.")
