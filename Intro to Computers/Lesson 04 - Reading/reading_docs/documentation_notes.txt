@@ -1,0 +1,431 @@
+Documentation Components:
+
+Navigation/Table of Contents - Where is it? (Left sidebar, top menu, etc.)
+Search Bar - Where is it located?
+Main Sections - What are the top-level categories? (e.g., Tutorial, API Reference, Guide)
+Version Selector - Can you change which version of the docs you're viewing?
+Code Examples - Are there syntax-highlighted code blocks?
+"See Also" or Related Links - Do pages link to related topics?
+
+| Feature           | Python Docs | Requests Docs | FastAPI Docs |
+| ----------------- | ----------- | ------------- | ------------ |
+| Nav Location      |Left sidebar |center body    |right sidebar |
+| Search Location   |top          |Left sidebar   |top           |
+| Has Tutorial?     |yes          |no             |yes           |
+| Has API Ref?      |yes          |no             |yes           |
+| Version Selector? |yes          |yes            |yes           |
+
+
+
+Exercise 2 - Scavenger Hunt Answers:
+
+1. JSON module:
+   - Function to convert to JSON: json.dump()
+   - Indentation parameter: indent=4
+   
+2. sorted() function:
+   - Found on page: The Python Standard Library » Built-in Functions
+   - Number of parameters: 2 arguments
+   - Default for reverse: False
+
+3. String Methods Hunt
+   - removes whitespace from l, r : .strip()
+   - Starts with prefix: startswith(prefix[, start[, end]])
+   - Example of str.split()
+>>> '1,2,3'.split(',')
+['1', '2', '3']
+
+4. Exception Hunt:
+   - When you divide by zero: ZeroDivisionError
+   - ValueError right type, inappropriate Value, 
+     TypeError when operation or function is applied to the wrong type
+
+5. Tutorial Navigation:
+   - Section 5: Data Structures
+   - A list comprehension consists of brackets containing an 
+     expression followed by a for clause, then zero or more for or if clauses.
+
+
+
+Exercise 3: Comparing Documentation Styles
+
+Making a Simple GET Request:
+
+1. Find an example of making a basic GET request
+import urllib.request
+with urllib.request.urlopen('https://www.python.org/') as f:
+    data = f.read()
+
+import requests
+r = requests.get('https://api.github.com/events')
+
+import httpx
+r = httpx.get('https://www.example.org/')
+
+
+| Aspect                     | urllib        | Requests    | httpx    |
+| -------------------------- | ------        | --------    | -----    |
+| Quick Start exists?        |no             |yes          |yes       |
+| Simple GET example lines   |3              |2            |2         |
+| Code examples highlighted? |yes            |yes          |yes       |
+| Explains response object?  |yes            |yes          |yes       |
+| Has tutorial section?      |no             |yes          |yes       |
+
+1. Which library has the simplest/shortest example for making a GET request?
+Both requests and httpx
+2. Which documentation explains concepts the most clearly?
+Requests
+3. Which documentation has the most code examples?
+Requests
+4. If you were a beginner, which documentation would you prefer? Why?
+Requests - short clear examples and explanations of responses
+
+
+
+Exercise 4: Library Documentation Deep Dive
+
+1. Finding the Function:
+
+- Use the search or navigation to find requests.get()
+
+- What section is it in? API Dev Interface
+
+2. Function Signature:
+
+- What parameters does requests.get() accept?
+url, params=None, **kwargs 
+(optional arguments that request takes, such as headers, auth, timeout, stream, etc.)
+- Which parameters are required?
+url
+- Which are optional?
+params and all **kwargs
+
+3. Return Value:
+
+- What object does it return?
+requests.Response object
+- What attributes/methods does the response object have?
+status_code, text, content, json(), headers, url, encoding, 
+cookies, history, ok, raise_for_status(), iter_content(), close()
+- How do you get the response body as text?
+response.text
+- How do you get the HTTP status code?
+response.status_code
+
+4. Examples:
+
+- Find at least 2 different examples of using requests.get()
+r = requests.get('https://api.github.com/events')
+
+payload = {'key1': 'value1', 'key2': 'value2'}
+r = requests.get('https://httpbin.org/get', params=payload)
+
+- What's an example showing how to pass query parameters?
+payload = {'key1': 'value1', 'key2': 'value2'}
+r = requests.get('https://httpbin.org/get', params=payload)
+
+- What's an example showing how to handle authentication?
+r = requests.get('https://api.github.com/user', auth=('user', 'pass'))
+
+5. Related Information:
+
+- What other HTTP methods are available? (POST, PUT, etc.)
+request, head, post, put, patch, delete, options
+- Can you find information about handling errors/exceptions?
+yes
+- Is there a section about timeouts?
+yes
+
+# requests.get() Documentation Summary:
+
+Location in docs: API (Developer Interface)
+Required parameters: url
+Optional parameters: params, headers, auth, timeout
+Returns: requests.Response
+Common use cases: Fetching JSON/data from APIs, simple web requests with query params or auth
+Related functions: requests.post, requests.put, requests.delete, requests.request, Session methods
+
+Practical App:
+import requests
+
+r = requests.get('https://api.github.com/users/github)
+print(r.status_code)
+print(r.json())
+
+
+
+Exercise 5: Reading API Documentation
+
+API Structure:
+1. Base URL:
+https://jsonplaceholder.typicode.com
+2. Endpoints:
+/posts
+/users
+/todos
+3. Authentication required:
+No
+
+Specific Endpoint Analysis:
+
+Pick one endpoint and document:
+
+Endpoint: /posts/1
+HTTP Method: GET
+Full URL: https://jsonplaceholder.typicode.com/posts/1
+Required Parameters: None
+Optional Parameters: None
+Response Format: JSON
+Example Response: 
+{
+  "userId": 1,
+  "id": 1,
+  "title": "sunt aut facere repellat",
+  "body": "quia et suscipit\nsuscipit"
+}
+
+Making a Request:
+
+- Can you find an example of a complete API request?
+fetch('https://jsonplaceholder.typicode.com/posts/1')
+- What headers are required?
+none for GET requests
+- What does a successful response look like?
+JSON object or array with the resource data
+- What status code indicates success?
+200
+
+Error Handling:
+
+- What status codes indicate errors?
+404
+- What does a 404 error mean for this API?
+Resource not Found
+- Is there information about rate limiting?
+No
+
+Practical Task:
+
+- Using the documentation, write the URL you would visit in a browser to:
+https://jsonplaceholder.typicode.com/posts/1
+- Get a specific resource (user, post, weather data, etc.)
+https://jsonplaceholder.typicode.com/posts
+- Include any required query parameters
+https://jsonplaceholder.typicode.com/comments?postId=3
+
+
+Exercise 6: Finding Version-Specific Information
+Version Navigation:
+
+1. Current Version: What version of Python does the documentation default to?
+Python 3.14
+2. Version Selector: Where can you change the version? (Usually top-left or in URL)
+Top of the page / URL path 
+3. Change Version: Switch to Python 3.8 documentation (or an older version)
+https://docs.python.org/3.8/
+
+Find Version-Specific Features:
+Task 1: F-strings
+
+1. When were f-strings introduced to Python?
+Python 3.6
+2. Search the "What's New" section
+3. Which Python version added f-strings?
+3.6 (PEP 498)
+
+Task 2: The Walrus Operator (:=)
+
+1. What Python version introduced the walrus operator?
+Python 3.8
+2. Find it in the "What's New in Python X.X" section
+3. What is its official name?
+Assignment expressions
+
+Task 3: Type Hints
+
+1. When were type hints introduced?
+Python 3.5 (PEP 484 / typing module)
+2. Find an example of type hint syntax
+def greeting(name: str) -> str:
+3. Have they changed between versions?
+Yes — many additions and improvements in later versions 
+
+Comparing Versions:
+
+Compare the dict.update() documentation between Python 3.8 and Python 3.11:
+1. Is the functionality the same?
+Yes
+2. Are there any new features or parameters?
+No
+3. Do the examples differ?
+No significant differences
+
+Document your findings:
+Version-Specific Features:
+- F-strings introduced in: Python 3.6
+- Walrus operator introduced in: Python 3.8
+- Type hints introduced in: Python 3.5
+Why this matters:
+Knowing the minimum Python version required for a feature prevents compatibility issues 
+and helps when writing or maintaining code for specific environments.
+
+
+Exercise 7: Using Search Effectively
+
+Search Exercises:
+1. Search for a Function:
+
+Search for: enumerate
+- How many results appear?
+Multiple (built-in function + other modules)
+- Which result is the official function documentation?
+Built-in Functions → enumerate()
+- Which other pages mention enumerate?
+enum module, threading.enumerate, itertools examples
+
+2. Search for a Concept:
+
+Search for: list comprehension
+- What tutorial page covers this?
+Tutorial -> Data Structures (or 5. Data Structures)
+- Are there examples in the search results?
+Yes
+
+3. Search for Error Messages:
+
+Search for: KeyError
+- Where is the official exception documentation?
+Built-in Exceptions
+- Can you find examples of when it's raised?
+Yes (accessing missing dict key)
+
+4. Ambiguous Searches:
+
+Search for: format
+- How many different things relate to "format"?
+A lot
+- String formatting?
+Yes
+- The format() function?
+Yes
+- Format specifications?
+Yes
+- How do you narrow down to what you want?
+Use more specific terms like “str.format”
+
+Search Strategy Comparison:
+
+Strategy A: Browse (navigate through table of contents)
+- Where did you look? 
+Library Reference -> 
+Built-in Functions ->
+list()
+- How many clicks? 3
+- Time taken: Longer
+
+Strategy B: Search (use search bar)
+- Search term used: sort list or list.sort
+- First result relevant? Yes
+- Time taken: Fast
+
+Strategy C: External (Google: "python sort list")
+- First result quality: 
+High
+- Led to official docs? 
+Often yes
+- offical docs were second in results
+Time taken: Very fast
+
+Questions:
+
+1. Which strategy was fastest?
+External search or site search
+
+2. Which strategy gave you the most authoritative answer?
+Official docs (via search or browse)
+
+3. When would you use each strategy?
+Browse for learning concepts; site search for specific names; 
+external search for quick discovery then verify in official docs.
+
+Exercise 8: Understanding Code Examples
+
+1. Imports: What is being imported?
+FastAPI from fastapi
+2. Setup/Configuration: How is the app initialized?
+app = FastAPI()
+3. Main Logic: What does the core function do?
+Defines a GET endpoint at / to return something
+4. Return Value: What does it return?
+Hello World
+
+Understanding Example Context:
+Exercise: Categorize these examples
+Visit https://requests.readthedocs.io/ and find 3 code examples:
+
+1. r = requests.get('https://api.github.com/events')
+Classification: Snippet/Partial
+What's missing? Import and response handling
+Could you run it as-is? No (needs import)
+
+2. Pythonpayload = {'key1': 'value1', 'key2': 'value2'}
+r = requests.get('https://httpbin.org/get', params=payload)Classification: Snippet/Partial (or near-complete in interactive context)
+What's missing? Import
+Could you run it as-is? Partially
+
+3. Authentication or timeout examples in Quickstart/Advanced
+Classification: Often Snippet/Partial
+What's missing? Full surrounding context or imports
+
+Reading Between the Lines:
+Find examples in documentation that show:
+
+Error handling
+
+try:
+    r = requests.get(url, timeout=0.001)
+except requests.exceptions.Timeout:
+    ...
+
+- Best practices
+Using with for streaming responses, setting timeouts, using Sessions
+- Common pitfalls to avoid
+Forgetting timeout (can hang), not closing streamed responses, incorrect file modes for uploads
+
+
+Exercise 9: Research Challenge
+Markdown# API Data Fetcher - Research Notes
+
+Problem: Fetch data from API and save to file
+
+Research Findings:
+
+1. HTTP Requests:
+   - Library choice: requests (third-party, simpler) or urllib.request (built-in)
+   - Function to use: requests.get(url)  or  urllib.request.urlopen(url)
+   - Error exceptions to handle: requests.exceptions.RequestException / ConnectionError / Timeout  
+     (or urllib.error.URLError / HTTPError)
+
+2. JSON Parsing:
+   - Module: json
+   - Function to parse: json.loads(text)  or  response.json() (with requests)
+   - Error exceptions to handle: json.JSONDecodeError
+
+3. File Writing:
+   - Best practice syntax: 
+     ```python
+     with open('data.json', 'w', encoding='utf-8') as f:
+         f.write(...)
+
+Error exceptions to handle: OSError, PermissionError, FileNotFoundError
+
+
+Error Handling:
+try/except syntax:
+
+try:
+    ...
+except SpecificError as e:
+    ...
+    
+Specific exceptions to catch: RequestException/URLError, JSONDecodeError, OSError
