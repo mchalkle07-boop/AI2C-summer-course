@@ -208,3 +208,72 @@ from pathlib import Path
 # **Goal**: Gain a deeper understanding of os and Pathlib.
 
 # Create a short listing of the overlapping features of os and Pathlib.  Why might one prefer one module over the other?
+
+
+# Manipulating files:
+
+# #OPEN
+# with open('input.txt', 'r') as file:        
+#     lines = file.readlines()
+#     for line in lines:
+#         print(line)
+# #WHAT TO WRITE
+# text_to_write = [
+#     "This is a new line of text.\n"
+#     "Here is another line.\n"
+#     "And yet another line.\n"
+# ]
+# #WRITE
+# with open("output.txt", "w") as file:
+#     for text in text_to_write:
+#         file.write(text)
+
+# both in one line:
+# with open('input.txt', 'r') as input, open('output.txt', 'w') as output:
+#     for line in input:
+#         output.write()
+
+# write a script to write 100 random integers on new lines
+
+
+import random
+
+# 1. Create and write 5 random numbers to the file
+with open('integers.txt', 'w') as file:
+    for _ in range(50, 100):
+        file.write(str(random.randint(1, 100)) + '\n')
+
+# 2. Read the numbers back from the file
+with open('integers.txt', 'r') as file:
+    lines = file.readlines()
+
+# 3. Use the first number as the starting point
+minimum = float(lines[0])
+maximum = float(lines[0])
+total_sum = 0
+
+# 4. Find min, max, and sum
+for line in lines:
+    number = float(line)
+    total_sum += number
+    
+    if number < minimum:
+        minimum = number
+    if number > maximum:
+        maximum = number
+
+# 5. Calculate the true average
+average = total_sum / len(lines)
+
+print("Maximum:", maximum)
+print("Minimum:", minimum)
+print("Average:", average)
+
+
+
+
+
+# for line in range(100):
+#     random_num = random.randit(50, 100)
+#     file.write(str(random_num)) + \n
+# write one that reads the file above finds min value, max value, and average
