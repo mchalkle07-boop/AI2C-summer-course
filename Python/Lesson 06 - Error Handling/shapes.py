@@ -14,5 +14,5 @@ elif shape == "rectangle":
     print(f"Area = {area_of_rectangle(length, width)}")
 else:
     base = int(input("What is the base of your triangle? "))
-    height = int(input("What is the height of your triangle? "))
+    height = float(input("What is the height of your triangle? "))
     print(f"Area = {area_of_tri(base, height)}")
