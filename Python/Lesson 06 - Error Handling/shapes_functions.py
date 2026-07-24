@@ -13,3 +13,6 @@ def area_of_square(side):
 def area_of_rectangle(length, width):
     rectangle = length * width
     return rectangle
+
+
+
