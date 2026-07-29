@@ -13,6 +13,7 @@ class Pet():
     def __init__(self, pet_name, age=0):
         self.name = pet_name
         self.years_old = age
+        self.num_legs = 4
 
     def meow(self):
         print(f'{self.name} meows')

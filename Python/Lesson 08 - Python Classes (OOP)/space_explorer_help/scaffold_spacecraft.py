@@ -22,3 +22,4 @@ class Spacecraft:
 
 if __name__ == "__main__":
     # run your tests here...
+    pass
