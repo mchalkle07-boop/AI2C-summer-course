@@ -29,19 +29,7 @@ import random as r
 # Sp2 = Spacecraft("Voyager 1", 400, 2.0)
 # Sp1.launch(100)
 # Sp2.launch(200)
-            
-
-    # class Player():
-    #     def __init__(self, name: str):
-    #         self.name = name
-    #         current_planet = Earth
-    #         distance_traveled = r.randint(100, 5000)
-    #         visited_planets = 
-    #         score = r.randint()
-    #         credits = r.randint()
-    #         mission_rewards = r.randint(1, 20)
-
-    #     pass
+        
 
 
         
