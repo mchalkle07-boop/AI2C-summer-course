@@ -49,6 +49,7 @@ def show_available(roster: dict[str, Soldier]) -> None:
 
 def dispatch(roster: dict[str, Soldier], name: str) -> None:
     """Dispatch a soldier by name, or print an error if not available."""
+    name = name.title()
     print(f"Dispatching {name}...", end=" ")
     soldier = roster.get(name)
     if soldier is None:
