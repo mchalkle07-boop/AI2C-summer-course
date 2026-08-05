@@ -4,7 +4,8 @@ Note: This file has incomplete coverage - some functions need tests!
 """
 
 import pytest
-from book import Book, validate_isbn
+from book import Book, validate_isbn, format_book_info
+
 
 
 class TestBook:
@@ -81,6 +82,31 @@ class TestBook:
         book.checkout()
         book.checkout()
         assert book.available_copies() == 3
+# True
+    def test_isbn_val_valid(self):
+        book = Book("123", "Title", "Author", 2000, 5)
+        # True
+        assert validate_isbn("1234567890") == True
+        assert validate_isbn("1234567890123") == True
+        assert validate_isbn("123-456-789-0") == True
+        assert validate_isbn("123 456 789 0") == True
+
+# False
+    def test_isbn_val_invalid(self):
+        book = Book("123", "Title", "Author", 2000, 5)
+        # False
+        assert validate_isbn("123") == False
+        assert validate_isbn("12345678901234") == False
+        assert validate_isbn("12345678AB") == False
+        assert validate_isbn(12345678) == False
+
+    def test_book_form(self):
+        book = Book("123", "Title", "Author", 2000, 5)
+        # assert test_book_form() == 
+        # assert 
+        # assert 
+        pass
+
 
 
 # Note: The following functions have NO tests yet (0% coverage):
