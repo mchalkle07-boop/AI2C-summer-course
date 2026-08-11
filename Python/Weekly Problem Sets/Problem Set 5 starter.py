@@ -7,7 +7,7 @@ def recursive_squares(num: int) -> list[int]:
     return recursive_squares(num - 1) + [num * num]
 
 
-def palindrome_checker(pal: str) -> str:
+def palindrome_checker(pal: str) -> bool:
     pal = pal.lower()
     if len(pal) <= 1:
         return True
@@ -56,7 +56,7 @@ def count_ways(stairs: int) -> int:
         return 1
     if stairs == 1:
         return 1
-    return count_ways(stairs - 1) + (stairs - 2)
+    return count_ways(stairs - 1) + count_ways(stairs - 2)
 
 
 def grid_paths(m, n):
@@ -232,19 +232,10 @@ if __name__ == "__main__":
     TMDB_API_KEY = "paste_your_key_here"
     GITHUB_TOKEN = "paste_your_token_here"
 
-    # Fail fast with a clear message instead of a confusing KeyError later
     if not TMDB_API_KEY:
-        raise RuntimeError(
-            "TMDB_API_KEY is not set. Set it in your terminal before running, e.g.\n"
-            '  PowerShell: $env:TMDB_API_KEY = "your_key_here"\n'
-            "  cmd:        set TMDB_API_KEY=your_key_here"
-        )
+        raise RuntimeError("TMDB_API_KEY is not set.")
     if not GITHUB_TOKEN:
-        raise RuntimeError(
-            "GITHUB_TOKEN is not set. Set it in your terminal before running, e.g.\n"
-            '  PowerShell: $env:GITHUB_TOKEN = "your_token_here"\n'
-            "  cmd:        set GITHUB_TOKEN=your_token_here"
-        )
+        raise RuntimeError("GITHUB_TOKEN is not set.")
 
     # Search for a movie
     movie = search_movie(TMDB_API_KEY, "The Matrix")
